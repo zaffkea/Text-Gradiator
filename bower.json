@@ -1,0 +1,20 @@
+{
+  "name": "Text-Gradiator-Website",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zaffkea/Text-Gradiator-Website",
+  "description": "website that explains what Text-Gradiator is and what it does",
+  "authors": [
+    "Aaron Zaffke"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Text-Gradiator": "git@github.com:zaffkea/Text-Gradiator.git"
+  }
+}

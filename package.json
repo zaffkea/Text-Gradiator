@@ -1,0 +1,35 @@
+{
+  "name": "MotoPhotoShow",
+  "version": "1.0.0",
+  "description": "MotoPhotoShow website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zaffkea/MotoPhotoShow.git"
+  },
+  "keywords": [
+    "MotoPhotoShow",
+    "MidWest",
+    "Photo",
+    "Show"
+  ],
+  "author": "Aaron Zaffke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaffkea/MotoPhotoShow/issues"
+  },
+  "homepage": "https://github.com/zaffkea/MotoPhotoShow",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-combine-mq": "^0.9.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.0.0"
+  }
+}

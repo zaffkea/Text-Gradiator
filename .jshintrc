@@ -1,0 +1,25 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "bitwise": true,
+  "es3": true,
+  "futurehostile": true,
+  "noarg": true,
+  "nocomma": true,
+  "unused": true,
+  "browser": true,
+  "jquery": true,
+  "devel": true,
+  "globals": {
+    "Modernizr": true,
+    "Hammer": true,
+    "API": true,
+    "JSON": true,
+    "_f": true,
+    "_g": true,
+    "_s": true,
+    "$j": true,
+    "weakBrowser": true,
+    "$thisPage": true
+  }
+}
