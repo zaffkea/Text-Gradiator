@@ -26,5 +26,15 @@
     </section>
   </article>
   <script src="js/text-gradiator.min.js"></script>
+  <script>
+    if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
+      window.addEventListener('load', function () {
+        var gradiator = new Gradiator();
+        gradiator.gradiate('.title', '#3ad7ff', '#0d84cc', false);
+      });
+    }else{
+      document.getElementsByClassName('title')[0].innerHTML='Your browser is too outdated. You will not be able to see the awesomeness that Text-Gradiator offers the web.';
+    }
+  </script>
 </body>
 </html>

@@ -3,8 +3,11 @@ article{
   section.hero{
     text-align: center;
     min-height: 50%;
+    width: 100%;
     display:table;
     margin: auto;
+    background: $gray;
+    box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,0.75);
     div.hero-content{
       vertical-align: middle;
       display: table-cell;
