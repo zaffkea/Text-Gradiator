@@ -21,10 +21,11 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="title">Text-Gradiator</h1>
-        <h2 class="subtitle">Put gradients on your text</h2>
+        <h2 class="subtitle">use gradients on your text</h2>
       </div>
     </section>
     <section class="tagline">
+      <h1 class="tagline-h1">Text-Gradiator allows you to give your site a little extra polish.<h1>
     </section>
   </article>
   <script src="js/text-gradiator.min.js"></script>
@@ -34,6 +35,7 @@
         var gradiator = new Gradiator();
         gradiator.gradiate('.title', '#3ad7ff', '#0d84cc', false);
         gradiator.gradiate('.subtitle', '#fff', '#ddd', false);
+        gradiator.gradiate('.tagline-h1', '#343434', '#000', false);
       });
     }else{
       document.getElementsByClassName('title')[0].innerHTML='Your browser is too outdated. You will not be able to see the awesomeness that Text-Gradiator offers the web.';
