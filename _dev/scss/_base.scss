@@ -2,7 +2,7 @@
 $darkGray: #2e2e2e;
 $gray: #343434;
 $white: #efefef;
-$orange: #e13000;
+$red: #e13000;
 $darkBlue: #3c5272;
 $blue: #0d84cc;
 $lightBlue: #3ad7ff;
@@ -18,6 +18,10 @@ html, body{
 }
 
 ::selection {
-  color: $darkGray;
-  background: $orange;
+  color: $white;
+  background: $lightBlue;
+}
+
+.textShadow{
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
