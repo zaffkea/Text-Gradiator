@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         separator: '\n'
       },
       css: {
-        src: ['_dev/css/normalize.css', 'bower_components/photoswipe/dist/photoswipe.css', 'bower_components/photoswipe/dist/default-skin/default-skin.css', '<%= combine_mq.style.dest %>'],
+        src: ['_dev/css/normalize.css', '<%= combine_mq.style.dest %>'],
         dest: '_dev/css/style.concat.css'
       }
     },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: '_dev/js/*',
-        tasks: ['concat:fullJs', 'uglify']
+        tasks: ['concat', 'uglify']
       }
     },
     uglify: {
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         // banner: '/*! <%= pkg.name %> <%= grunt.template.today('yyyy-mm-dd') %> */\n'
       },
       js: {
-        src: 'bower_components/Text-Gradiator/js/text-gradiator.js',
+        src: '_dev/js/text-gradiator.js',
         dest: 'js/text-gradiator.min.js'
       }
     }
