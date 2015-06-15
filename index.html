@@ -19,7 +19,7 @@
   <![endif]-->
   <header>
       <div class="hero-content">
-        <h1 class="title red-grad">Text - Gradiator</h1>
+        <h1 class="title blue-grad">Text - Gradiator</h1>
         <h2 class="subtitle">Put gradients on your text</h2>
       </div>
   </header>
@@ -34,8 +34,8 @@
       <p class="subtitle">How to use it:</p>
       <div class="directions">
         <p>Include it in you page: <br/><code>&lt;script src="js/text-gradiator.min.js"&gt;&lt;/script&gt;</code></p>
-        <p>Give the element(s) you want to apply gradiants to a unique class or ID<br/><code>&lt;h1 class="red-grad"&gt;TITLE&lt;/h1&gt;</code></p>
-        <p>After the <code>window.onload</code> event, run this code to apply the gradients:<br/><code>gradiator.gradiate('.red-grad', '#f00', '#900', false);</code></p>
+        <p>Give the element(s) you want to apply gradiants to a unique class or ID<br/><code>&lt;h1 class="blue-grad"&gt;TITLE&lt;/h1&gt;</code></p>
+        <p>After the <code>window.onload</code> event, run this code to apply the gradients:<br/><code>gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);</code></p>
         <p>The first parameter is the <code>.class</code> or <code>#id</code> of the element(s) you are applying the gradient to.</p>
         <p>The second parameter is the <strong style="color: #3ad7ff;">top color</strong> of the gradient</p>
         <p>The third parameter is the <strong style="color: #0d84cc;">bottom color</strong>, as you probably already guessed.</p>
@@ -57,7 +57,7 @@
   <script>
     if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
       window.addEventListener('load', function () {
-        gradiator.gradiate('.red-grad', '#3ad7ff', '#0d84cc', false);
+        gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);
         gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
       });
     }else{
