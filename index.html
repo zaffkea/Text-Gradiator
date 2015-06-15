@@ -24,8 +24,6 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:700|Open+Sans" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!--[if lt IE 8]>
@@ -69,14 +67,44 @@
   </footer>
   <script src="js/text-gradiator.min.js"></script>
   <script>
+    var gradiate = function(){
+      gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);
+      gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
+    }
     if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
       window.addEventListener('load', function () {
-        gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);
-        gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
+
+
+        var fontsLoaded = false;
+        var stylesLoaded = false;
+        var fonts = document.createElement('link'); fonts.rel = 'stylesheet';
+        fonts.href = 'http://fonts.googleapis.com/css?family=Libre+Baskerville:700|Open+Sans';
+        var styles = document.createElement('link'); styles.rel = 'stylesheet';
+        styles.href = 'css/style.css';
+        var h = document.getElementsByTagName('head')[0];
+        h.parentNode.insertBefore(fonts, h);
+        h.parentNode.insertBefore(styles, h);
+
+        fonts.addEventListener('load', function(){
+          console.log('fonts loaded');
+          fontsLoaded = true;
+          if(stylesLoaded) {
+            gradiate();
+          }
+        });
+        styles.addEventListener('load', function(){
+          console.log('styles loaded');
+          stylesLoaded = true;
+          if(fontsLoaded) {
+            gradiate();
+          }
+        });
       });
+
     }else{
       document.getElementsByClassName('title')[0].innerHTML='Your browser is too outdated. You will not be able to see the awesomeness that Text-Gradiator offers the web.';
     }
   </script>
+
 </body>
 </html>
