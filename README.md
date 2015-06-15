@@ -23,7 +23,7 @@ Give the element(s) you want to apply gradiants to a unique class or ID
 After the window.onload event, run this code to apply the gradients:
 ```javascript
 gradiator.gradiate('.red-grad', '#f00', '#900', false);
-``
+```
 
 The first parameter is the `.class` or `#id` of the element(s) you are applying the gradient to.
 
