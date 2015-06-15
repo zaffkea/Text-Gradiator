@@ -17,29 +17,54 @@
   <!--[if lt IE 8]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <article>
-    <section class="hero">
+  <header>
       <div class="hero-content">
+        <h1 class="title red-grad">Text - Gradiator</h1>
         <h2 class="subtitle">Put gradients on your text</h2>
-        <h1 class="title">Text - Gradiator g j y q p</h1>
-        <h1 class="title">Freshness is essential, that makes all the difference! I like to smell something cooking. It makes me feel at home! Bring on the roasted potatoes! Bring on the beaujolais!</h1>
-        <h1 class="title">Text</h1>
-        <h1 class="title">Text-Gradiator</h1>
-        <h2 class="subtitle">use gradients on your text</h2>
       </div>
+  </header>
+  <article>
+    <!-- <section class="hero light">
+      <div class="hero-content">
+        <h1 class="title red-grad">Text - Gradiator</h1>
+        <h2 class="subtitle">Put gradients on your text</h2>
+      </div>
+    </section> -->
+    <section class="tagline dark">
+      <p class="text-shadow-dark white-grad">Sometimes a gradient on your text is just the extra polish your design needs.</p>
     </section>
-    <section class="tagline">
-      <h1 class="tagline-h1">Text-Gradiator allows you to give your site a little extra polish.<h1>
+    <section class="main-content">
+      <p><span class="title">Text-Gradiator</span> is a javascript library that allows you to easily put gradients on text elements.</p>
+      <p>When designers are looking to add gradients to their text, they often resort to using an <code>&lt;img&gt;</code> element. While this solution technically works, there are a number of caveats. It may effect your search engine optimization, and it could cause problems for people who use screen readers. It can also require you to write a lot of extra markup and css. Plus, you have to create the image in an image editor.</p>
+      <p>With Text-Gradiator, you don't have to worry about any of that. </p>
+      <p class="subtitle">How to use it:</p>
+      <div class="directions">
+        <p>Include it in you page: <br/><code>&lt;script src="js/text-gradiator.min.js"&gt;&lt;/script&gt;</code></p>
+        <p>Give the element(s) you want to apply gradiants to a unique class or ID<br/><code>&lt;h1 class="red-grad"&gt;TITLE&lt;/h1&gt;</code></p>
+        <p>After the <code>window.onload</code> event, run this code to apply the gradients:<br/><code>gradiator.gradiate('.red-grad', '#f00', '#900', false);</code></p>
+        <p>The first parameter is the <code>.class</code> or <code>#id</code> of the element(s) you are applying the gradient to.</p>
+        <p>The second parameter is the <strong style="color: #3ad7ff;">top color</strong> of the gradient</p>
+        <p>The third parameter is the <strong style="color: #0d84cc;">bottom color</strong>, as you probably already guessed.</p>
+        <p>The last parameter is a boolean that tells Text-Gradiator whether or not to prefer <code>css</code>. If you have are using <code>text-shadow</code>, you will want to keep it set to <code>false</code>. Otherwise, you might get some crazy results.</p>
+      </div>
+      <p class="subtitle">How it works:</p>
+      <p>Text-Gradiator creates a <code>canvas</code> element with many of the same display properties as your original text element and inserts it into the page. Then it fills the text with a gradient using the colors of your choice. It will use the same font and even apply a <code>text-shadow</code> if you are using one. Then, it gives the original text element a class of <code>.sr-only</code>. This will hide it from most viewers, while still making it accessible to screen readers.</p>
+
+      <p class="subtitle">How to get it:</p>
+      <p>You can download Text-Gradiator from <a href="https://github.com/zaffkea/Text-Gradiator">GitHub</a>.</p>
     </section>
+
+
   </article>
+  <footer class="dark">
+    <p class="white-grad">© Aaron Zaffke</p>
+  </footer>
   <script src="js/text-gradiator.min.js"></script>
   <script>
     if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
       window.addEventListener('load', function () {
-        var gradiator = new Gradiator();
-        gradiator.gradiate('.title', '#3ad7ff', '#0d84cc', false);
-        // gradiator.gradiate('.title', '#DE1B1B', '#aa0011', false);
-        gradiator.gradiate('.subtitle', '#DE1B1B', '#aa0011', false);
+        gradiator.gradiate('.red-grad', '#3ad7ff', '#0d84cc', false);
+        gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
       });
     }else{
       document.getElementsByClassName('title')[0].innerHTML='Your browser is too outdated. You will not be able to see the awesomeness that Text-Gradiator offers the web.';

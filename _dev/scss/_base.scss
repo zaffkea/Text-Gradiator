@@ -1,17 +1,23 @@
 
 $darkGray: #2e2e2e;
-$gray: #343434;
+$gray: #555;
+$lightGray: #ccc;
 $white: #efefef;
-$red: #e13000;
+$lightRed: #ff001a;
+$red: #d20015;
+$darkRed: #98000f;
 $darkBlue: #3c5272;
 $blue: #0d84cc;
 $lightBlue: #3ad7ff;
 
+$accentLight: #3ad7ff;
+$accent: #0d84cc;
+
 html, body{
-  background: $darkGray;
-  background: url(../img/tweed.jpg);
   height: 100%;
   box-sizing: border-box;
+  color: $darkGray;
+  background: $white;
 }
 
 *, *:before, *:after {
@@ -19,10 +25,14 @@ html, body{
 }
 
 ::selection {
-  color: $white;
-  background: $lightBlue;
+  color: $darkGray;
+  background: $accentLight;
 }
 
-.textShadow{
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+.text-shadow-light{
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-dark{
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }

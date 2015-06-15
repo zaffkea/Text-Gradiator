@@ -1,6 +1,9 @@
 html, body{
-  color: $white;
   font-family: 'Open Sans', sans-serif;
+  color: $darkGray;
+  .dark{
+    color: $white;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, a, blockquote, button{
@@ -9,10 +12,27 @@ h1, h2, h3, h4, h5, h6, a, blockquote, button{
 
 h1.title{
   font-size: 4em;
-  color: $lightBlue;
-  @extend .textShadow;
+  color: $accent;
+  @extend .text-shadow-light;
 }
 h2.subtitle{
-  font-size: 1.5em;
-  @extend .textShadow;
+  font-size: 1.75em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+code{
+  font-family: "Courier New", Courier, monospace;
+  padding: 0 0.5em;
+  background: $darkGray;
+  color: $white;
+  border-radius: 5px;
+}
+
+a{
+  color: $accent;
+  transition: color 0.5s;
+  &:hover{
+    color: $accentLight;
+    transition: color 0.5s;
+  }
 }

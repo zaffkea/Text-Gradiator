@@ -122,13 +122,13 @@ var Gradiator = function() {
         if (shadows.length > 1) {
           shadowColor = shadows.shift() + ')';
           var offsets = shadows.shift().split(' ');
-          shadowOffsetX = parseInt(offsets[0], 10) * ratio;
-          shadowOffsetY = parseInt(offsets[1], 10) * ratio;
-          shadowBlur = parseInt(offsets[2], 10) * ratio;
+          shadowOffsetX = parseInt(offsets[0], 10);
+          shadowOffsetY = parseInt(offsets[1], 10);
+          shadowBlur = parseInt(offsets[2], 10);
         }
       }
 
-      cHeight += shadowOffsetY * 2 + shadowBlur * 2;
+      cHeight += Math.abs(shadowOffsetY) * 2 + Math.abs(shadowBlur) * 2;
 
       // store the canvases for window resize handline
       gradCanvasObj = { 'canvas': canvas, 'elem': elem, 'display': props.getPropertyValue('display') };
@@ -244,7 +244,6 @@ var Gradiator = function() {
 
       // add the .sr-only class to hide the original element, and we're done!
       elem.className += ' sr-only';
-      elem.style.color = 'transparent';
     }
   };
   this.addResizeHandler();

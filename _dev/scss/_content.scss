@@ -1,33 +1,105 @@
+header{
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  display:table;
+  margin: auto;
+  div.hero-content{
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
 article{
-  height: 100%;
-  section{
-    // overflow: auto;
-  }
-  section.hero{
-    text-align: center;
-    min-height: 50%;
-    width: 100%;
-    display:table;
-    margin: auto;
-    background: $gray;
-    background: $white;
-    box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.5);
-    div.hero-content{
-      vertical-align: middle;
-      display: table-cell;
-    }
-    h1, h2{
-    }
-  }
+  // min-height: 100%;
+  // overflow: auto;
+  // section{
+  //   // overflow: auto;
+  // }
+  // section.hero{
+  //   text-align: center;
+  //   height: 50%;
+  //   width: 100%;
+  //   display:table;
+  //   margin: auto;
+  //   div.hero-content{
+  //     vertical-align: middle;
+  //     display: table-cell;
+  //   }
+  // }
   section.tagline{
-    background: $white;
-    box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.5);
-    color: $darkGray;
     margin: 0 auto;
     overflow: auto;
     text-align: center;
-    h1{
-      margin: 3em auto;
+    padding: 1em 2em;
+    font-size: 1.75em;
+    color: $white;
+    background: $darkGray;
+    background: url(../img/tweed.jpg);
+    box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,1);
+  }
+  section.main-content{
+    background: $white;
+    padding: 1em;
+    font-size: 1.25em;
+    margin: auto;
+    max-width: 1170px;
+    p{
+      .title{
+        font-size: 1.5em;
+        color: $accent;
+      }
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    .subtitle{
+      // margin: 0;
+      margin-bottom: -1em;
+      color: $accent;
+    }
+    .directions{
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background: $lightGray;
+      border-radius: 5px;
+      margin-top: 1em;
+      #uglyExample{
+        @extend .text-shadow-dark;
+        color: $accent;
+      }
+    }
+  }
+
+}
+
+footer{
+  margin: 0 auto;
+  overflow: auto;
+  text-align: center;
+  padding: 0.75em 2em;
+  font-size: 1.25em;
+  background: $darkGray;
+  background: url(../img/tweed.jpg);
+  box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+  p{
+    @extend .text-shadow-dark;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /*screens smaller than 768px wide*/
+  article{
+    section.main-content{
+      // column-count: 1;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  /*screens smaller than 1280px wide*/
+  article{
+    section.main-content{
+      // column-count: 2;
     }
   }
 }
