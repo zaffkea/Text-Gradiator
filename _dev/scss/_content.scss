@@ -10,22 +10,6 @@ header{
   }
 }
 article{
-  // min-height: 100%;
-  // overflow: auto;
-  // section{
-  //   // overflow: auto;
-  // }
-  // section.hero{
-  //   text-align: center;
-  //   height: 50%;
-  //   width: 100%;
-  //   display:table;
-  //   margin: auto;
-  //   div.hero-content{
-  //     vertical-align: middle;
-  //     display: table-cell;
-  //   }
-  // }
   section.tagline{
     margin: 0 auto;
     overflow: auto;
@@ -52,11 +36,11 @@ article{
       display: inline;
     }
     .subtitle{
-      // margin: 0;
       margin-bottom: -1em;
       color: $accent;
     }
     .directions{
+      overflow: hidden;
       padding: 0.5em 1em;
       font-size: 1em;
       background: $lightGray;
@@ -68,7 +52,6 @@ article{
       }
     }
   }
-
 }
 
 footer{
@@ -84,22 +67,5 @@ footer{
     @extend .text-shadow-dark;
     margin: 0.25em;
     margin-bottom: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  /*screens smaller than 768px wide*/
-  article{
-    section.main-content{
-      // column-count: 1;
-    }
-  }
-}
-@media (max-width: 1280px) {
-  /*screens smaller than 1280px wide*/
-  article{
-    section.main-content{
-      // column-count: 2;
-    }
   }
 }
