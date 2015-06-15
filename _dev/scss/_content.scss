@@ -31,7 +31,7 @@ article{
     overflow: auto;
     text-align: center;
     padding: 1em 2em;
-    font-size: 1.75em;
+    font-size: 1.5em;
     color: $white;
     background: $darkGray;
     background: url(../img/tweed.jpg);
@@ -43,14 +43,13 @@ article{
     font-size: 1.25em;
     margin: auto;
     max-width: 1170px;
-    p{
-      .title{
-        font-size: 1.5em;
-        color: $accent;
-      }
-      &:first-child{
-        margin-top: 0;
-      }
+    h3.title{
+      font-size: 1.5em;
+      color: $accent;
+      display: inline;
+    }
+    p:first-of-type{
+      display: inline;
     }
     .subtitle{
       // margin: 0;

@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/ico/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
@@ -24,8 +24,6 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:700|Open+Sans" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!--[if lt IE 8]>
@@ -35,14 +33,16 @@
       <div class="hero-content">
         <h1 class="title blue-grad">Text - Gradiator</h1>
         <h2 class="subtitle">Put gradients on your text</h2>
+        <a href="https://github.com/zaffkea/Text-Gradiator"><img src="img/GitHub-Mark-64px.png" srcset="img/GitHub-Mark-64px.png 1x, img/GitHub-Mark-120px-plus.png 2x"/></a>
       </div>
   </header>
   <article>
     <section class="tagline dark">
-      <p class="text-shadow-dark white-grad">Sometimes a gradient on your text is just the extra polish your design needs.</p>
+      <h3 class="text-shadow-dark white-grad">Sometimes a gradient on your text is just the extra polish your design needs.</h3>
     </section>
     <section class="main-content">
-      <p><span class="title">Text-Gradiator</span> is a javascript library that allows you to easily put gradients on text elements.</p>
+      <h3 class="title">Text-Gradiator</h3>
+      <p>is a javascript library that allows you to easily put gradients on text elements.</p>
       <p>When designers are looking to add gradients to their text, they often resort to using an <code>&lt;img&gt;</code> element. While this solution technically works, there are a number of caveats. It may effect your search engine optimization, and it could cause problems for people who use screen readers. It can also require you to write a lot of extra markup and css. Plus, you have to create the image in an image editor.</p>
       <p>With Text-Gradiator, you don't have to worry about any of that. </p>
       <p class="subtitle">How to use it:</p>
@@ -69,14 +69,43 @@
   </footer>
   <script src="js/text-gradiator.min.js"></script>
   <script>
+    var gradiate = function(){
+      gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);
+      gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
+    }
     if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
-      window.addEventListener('load', function () {
-        gradiator.gradiate('.blue-grad', '#3ad7ff', '#0d84cc', false);
-        gradiator.gradiate('.white-grad', '#fff', '#bbb', false);
-      });
+      var init = function () {
+        var fontsLoaded = false;
+        var stylesLoaded = false;
+        var fonts = document.createElement('link'); fonts.rel = 'stylesheet';
+        fonts.href = 'http://fonts.googleapis.com/css?family=Libre+Baskerville:700|Open+Sans';
+        var styles = document.createElement('link'); styles.rel = 'stylesheet';
+        styles.href = 'css/style.css';
+        var h = document.getElementsByTagName('head')[0];
+        h.parentNode.insertBefore(fonts, h);
+        h.parentNode.insertBefore(styles, h);
+
+        fonts.addEventListener('load', function(){
+          fontsLoaded = true;
+          if(stylesLoaded) {
+            gradiate();
+          }
+        });
+        styles.addEventListener('load', function(){
+          stylesLoaded = true;
+          if(fontsLoaded) {
+            gradiate();
+          }
+        });
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(init);
+      else window.addEventListener('load', init);
     }else{
       document.getElementsByClassName('title')[0].innerHTML='Your browser is too outdated. You will not be able to see the awesomeness that Text-Gradiator offers the web.';
     }
   </script>
+
 </body>
 </html>
