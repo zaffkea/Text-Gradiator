@@ -11,7 +11,7 @@ var Gradiator = function() {
   )[1];
 
   // create a <style> with a .class to hide the original text elements
-  var css = '.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; display: block; }';
+  var css = '.tg-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; display: block; }';
   var head = document.head || document.getElementsByTagName('head')[0];
   var style = document.createElement('style');
   style.type = 'text/css';
@@ -78,8 +78,8 @@ var Gradiator = function() {
       // set element var
       var elem = elements[i];
 
-      // remove the .sr-only class so the element is visible
-      elem.className = elem.className.replace(/\bsr-only\b/, '');
+      // remove the .tg-sr-only class so the element is visible
+      elem.className = elem.className.replace(/\btg-sr-only\b/, '');
 
       // check if you want to use CSS instead of canvas
       // it really is the best option if you don't want
@@ -242,8 +242,8 @@ var Gradiator = function() {
         ctx.fillText(gradLine, startLeft, y);
       }
 
-      // add the .sr-only class to hide the original element, and we're done!
-      elem.className += ' sr-only';
+      // add the .tg-sr-only class to hide the original element, and we're done!
+      elem.className += ' tg-sr-only';
     }
   };
   this.addResizeHandler();
